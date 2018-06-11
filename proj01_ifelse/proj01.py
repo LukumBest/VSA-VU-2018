@@ -27,10 +27,11 @@ birth_month = int(raw_input("Enter the number of your birth month. "))
 birth_day = int(raw_input("What day of the month were you born? "))
 if birth_month > current_month:
     months = int(birth_month - current_month)
-    print "Your birthday is in " + str(months) + "and " + str(days) "!"
-if birth_day > current_day:
-    days = int(birth_day - current_day)
-
-
+    if birth_day > current_day:
+        days = int(birth_day - current_day)
+    print name_2 + ", your birthday is in " + str(months) + " months and " + str(days) + " days!"
 if birth_month < current_month:
-    print str(birth_month + current_month)
+    months_2 = int(birth_month + current_month)
+    if birth_day < current_day:
+        days_2 = int(30 - (current_day - birth_day))
+    print name + ", your birthday is in " + str(months_2) + " months and " + str(days_2) + " days!"
