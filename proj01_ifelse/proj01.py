@@ -39,9 +39,10 @@ if birth_month < current_month:
     print name + ", your birthday is in " + str(months_2) + " months and " + str(days_2) + " days!"
     print "End of Program 2."
 
-name_3 = raw_input("Hi friend! What's your name?")
+name_3 = raw_input("Hi friend! What's your name? ")
 print "My name's Macintosh."
-
+raw_input("Where are you from? ")
+if input()
 
 
 
