@@ -49,30 +49,49 @@ elif age < 14:
 
 
 
-
-name_3 = raw_input("Hi friend! What's your name? ")
-if len(name_3) > 10:
-    print "That's a long name."
-print "My name's Macintosh."
-state = (raw_input("Where are you from? "))
-if state == "alabama" or state == "Alabama":
-    print "Neat."
-elif state == "alaska" or state == "Alaska":
-    print "The lights there are so beautiful! I've been a couple of times myself."
-elif state == "arizona" or state == "Arizona":
-    print "Neat."
-elif state == "arkansas" or state == "Arkansas":
-    print "Nice."
-elif state == "california" or state == "California":
-    city = raw_input("Where in California? ")
-    if city == "Las Vegas" or city == "las vegas" or city == "Las vegas" or city == "las Vegas" or city == "Vegas" or city == "vegas":
-        print "With the famed Vegas Strip, and the casinos and stuff? I've never been there."
-
-
-    
-
-
-
-
-
-
+talk = 1
+if talk == 1:
+    name_3 = raw_input("Hi friend! What's your name? ")
+    if len(name_3) > 10:
+        print "That's a long name."
+    print "My name's Macintosh."
+    state = (raw_input("Where are you from? "))
+    if state == "alabama" or state == "Alabama":
+        print "Neat."
+    elif state == "alaska" or state == "Alaska":
+        print "The lights there are so beautiful! I've been a couple of times myself."
+    elif state == "arizona" or state == "Arizona":
+        print "Neat."
+    elif state == "arkansas" or state == "Arkansas":
+        print "Nice."
+    elif state == "florida" or state == "Florida":
+        print "the Sunshine State with the beautiful beaches and great seafood? I went there and I loved it!"
+    elif state == "Texas" or state == "texas":
+        print "That's where I'm from."
+    elif state == "colorado" or state == "Colorado":
+        ur = raw_input("Oh. No offense, but isn't that where the crackheads are? ")
+        if ur == "yes" or ur == "Yes":
+            print "Ha! Thought so."
+        else:
+            print "Oh."
+    elif state == "california" or state == "California":
+        city = raw_input("Where in California? ")
+        if city == "Las Vegas" or city == "las vegas" or city == "Las vegas" or city == "las Vegas" or city == "Vegas":
+            print "With the famed Vegas Strip, and the casinos and stuff? I've never been there myself."
+    else:
+        print "Nice."
+    ui = raw_input("Do you want to play a game? ")
+    if ui == "no" or ui == "No":
+        raw_input("Why not? I haven't talked to anyone in a long time.")
+        print "Oh. Ok. Bye I guess."
+        talk = talk - 1
+    if ui == "yes" or ui == "Yes":
+        print "Yay! I'm good at most games as long as they're only virtual."
+    ui2 = raw_input("Which game do you want to play? (1, 2, or 3.) ")
+    if ui2 == "1":
+        print "Great! Let's get started."
+        ui_3 = raw_input("Game 1 is rock, paper, scissors. Do you still want to play? ")
+        if ui_3 == "no" or ui_3 == "No":
+            print "Oh. Ok. Bye I guess."
+            talk = talk - 1
+        if ui_3 == "yes" or ui_3 == "Yes":
