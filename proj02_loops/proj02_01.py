@@ -62,3 +62,12 @@ while game == 2:
             print "Tie!"
 
 raw_input("Would you like to play again?")
+if u_1 == "yes" or "Yes":
+    game = 2
+else:
+    game = game - 1
+if u_2 == "Yes" or "yes":
+    game = 2
+else:
+    game = game - 1
+
