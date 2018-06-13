@@ -28,13 +28,14 @@ while game == 1 and counter < 10:
     elif ug < num:
         print "You guessed too low!"
     elif ug == num:
-        ui = raw_input(("Congrats, you won in ") + str(counter) + (" guess(es)! Would you like to play again? "))
+        ui = raw_input(("Great, you won in ") + str(counter) + (" guess(es)! Do you want to play again? "))
         if ui == "Yes" or ui == "yes" or ui == "yup" or ui == "Yup":
             game = 1
             num = int(random.randint(1, 9))
             counter = 0
         else:
             game = game - 1
+            print "Bye!"
     else:
         counter = counter + 0
         print "A number, not a word or letters."
