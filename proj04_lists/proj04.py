@@ -50,6 +50,22 @@ d = ["b", "a", "f", "y", "a", "t", "_", "p", "a", "R"]
 #Part IV
 #Ask the user for a string, and print out whether this string is a palindrome or not.
 
+loop = 1
+x = 0
 
-u_str = raw_input("Enter a string. I will tell you whether it is a palindrome or not.")
-if len(u_str) % 2 == 0:
+u_str = raw_input("Enter a word and I will tell you if it is a palindrome.")
+if len(u_str)%2 == 0:
+    while x < (len(u_str) / 2) and loop == 1:
+       if u_str[x] == u_str[-x + -1]:
+           x = x + 1
+       else:
+           loop = loop + 1
+else:
+    while x < ((len(u_str) -1) / 2) and loop == 0:
+        if u_str[x] == u_str[-x + -1]:
+            x = x + 1
+            loop = loop + 1
+if loop == 0:
+    print "It's a palindrome,"
+elif loop == 1:
+    print "It's not a palindrome."
