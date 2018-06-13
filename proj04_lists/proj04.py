@@ -16,11 +16,9 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 #and write a program that prints out all the elements of the list that are less than 5.
 
 
-for num in a:
-    if num < 5:
-        print num
-
-
+#for num in a:
+    #if num < 5:
+        #print num
 
 
 #Part II
@@ -31,10 +29,9 @@ c = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 # that are common between the lists (without duplicates).
 # Make sure your program works on two lists of different sizes.
 
-for number in b:
-    if number 
-        print number
-
+#for number in c:
+    #if number in b:
+        #print number
 
 
 #Part III
@@ -43,22 +40,16 @@ for number in b:
 d = ["b", "a", "f", "y", "a", "t", "_", "p", "a", "R"]
 # and write a program that replaces all “a” with “*”.
 
-
-
-
-
-
-
+#for letter in d:
+    #if letter == "a":
+        #print "*"
+    #else:
+        #print letter
 
 
 #Part IV
 #Ask the user for a string, and print out whether this string is a palindrome or not.
 
 
-
-
-
-
-
-
-
+u_str = raw_input("Enter a string. I will tell you whether it is a palindrome or not.")
+if len(u_str) % 2 == 0:
