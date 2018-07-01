@@ -50,15 +50,12 @@
 
 import time
 import random
+
 talk = 1
-if talk == 1:
-    name_3 = raw_input("Hi friend! What's your name? ")
+while talk == 1:
+    name_3 = raw_input("Hi! What's your name? ")
     name_3 = name_3[0:1].upper() + name_3[1:].lower()
     if len(name_3) > 10 and len(name_3) < 50:
-        time.sleep(1.2)
-        print "That's a long name."
-        time.sleep(1.4)
-    elif len(name_3) < 50:
         time.sleep(1.2)
         print "That's a long name."
         time.sleep(1.4)
@@ -105,9 +102,9 @@ if talk == 1:
             print "Oh."
             time.sleep(0.6)
     elif state == "california" or state == "California":
-        ime.sleep(0.45)
+        time.sleep(0.45)
         city = raw_input("Where in California? ")
-        if city == "Las Vegas" or city == "las vegas" or city == "Las vegas" or city == "las Vegas" or city == "Vegas":
+        if city == "Las Vegas" or city == "las vegas" or city == "Vegas":
             time.sleep(0.4)
             print "With the famed Vegas Strip, and the casinos and stuff? I've never been there myself."
             time.sleep(0.5)
@@ -124,7 +121,15 @@ if talk == 1:
         time.sleep(0.2)
         print "Yay! I'm good at most games as long as they're only virtual."
     ui2 = raw_input("Which game do you want to play? (1, 2, or 3.) ")
-    time.sleep(0.45)
+    if ui2 != "1" or "2" or "3":
+        def goto(lnum):
+            global line
+            line = lnum
+        line = 1
+        while True:
+            if line == 1:
+                print "That's not an option. Let's go with game 3."
+                goto(215)
     if ui2 == "1":
         time.sleep(0.45)
         print "Great! Let's get started."
@@ -133,7 +138,7 @@ if talk == 1:
             time.sleep(1)
             print "Oh. Ok. Bye I guess."
             talk = talk - 1
-        if ui_3 == "yes" or ui_3 == "Yes":
+        else:
             time.sleep(0.45)
             print "Great!"
             game = 2
@@ -174,13 +179,13 @@ if talk == 1:
                     game = 2
                 else:
                     game = game - 1
-    if ui2 == "2":
+    elif ui2 == "2":
         print "Great! Let's get started."
         ui_4 = raw_input("Game 2 is Guess my number. Do you still want to play?")
         if ui_4 == "no" or ui_4 == "No":
             print "Oh. Bye then."
             talk = talk - 1
-        if ui_4 == "yes" or ui_4 == "Yes":
+        else:
             print "Great! Let's begin."
             game = 1
             counter = 0
@@ -196,13 +201,46 @@ if talk == 1:
                     print "You guessed too low!"
                 elif ug == num:
                     ui = raw_input(("Great, you won in ") + str(counter) + (" guess(es)! Do you want to play again? "))
-                    if ui == "Yes" or ui == "yes" or ui == "yup" or ui == "Yup":
+                    if ui == "No" or ui == "no":
+                        print "Oh. Okay then."
+                        game = game - 1
+                    else:
                         game = 1
                         num = int(random.randint(1, 9))
                         counter = 0
-                    else:
-                        game = game - 1
-                        print "Ok."
                 else:
                     counter = counter + 0
                     print "A number, not a word or letters."
+    if ui2 == "3" and line == 215:
+        print "This game is called I Will Predict Your Birthday. I'm really good at it. Let's begin."
+        bmon = int(raw_input("Tell me the number of your birth month."))
+        bmon2 = int(bmon + 18)
+        print "Add 18 to that. This gives you " + str(bmon2) + "."
+        bmon3 = int(bmon2 * 25)
+        print "Multiply that by 25. Now you have " + str(bmon3) + "."
+        bmon4 = int(bmon3 - 333)
+        print "Subtract 333 from that. That leaves you with " + str(bmon4) + "."
+        bmon5 = int(bmon4 * 8)
+        print "Multiply the number by 8. Now, it's " + str(bmon5) + "."
+        bmon6 = int(bmon5 - 554)
+        print "Subtract 554 from that. You're left with " + str(bmon6) + "."
+        bmon7 = int(bmon6 / 2)
+        print "Divide " + str(bmon6) + " by 2. Now you have " + str(bmon7) + "."
+        bdate = int(raw_input("Tell me what day of the month you were born."))
+        bdamon = int(bmon7 + bdate)
+        print "Add your day of birth to " + str(bmon7) + ". You now have " + str(bdamon) + "."
+        bdamon2 = int(bdamon * 5)
+        print "Multiply " + str(bdamon) + " by 5. You have " + str(bdamon2) + "."
+        bdamon3 = int(bdamon2 + 692)
+        print "Subtract 692 and you're left with " + str(bdamon3) + "."
+        bdamon4 = int(bdamon3 * 20)
+        print "Now multiply " + str(bdamon3) + " by 20 and you get " + str(bdamon4) + "."
+        l2d = int(raw_input("Give me the last two numbers of your birth year."))
+        bdale = int(bdamon4 + l2d)
+        print "Then add " + str(l2d) + " to " + str(bdamon4) + " and you get " + str(bdale) + "."
+        bdale_ultimate = int(bdale - 32940)
+        print "And finally, subtract 32,940 from " + str(bdale) + " to get " + str(bdale_ultimate) + "."
+        if l2d < 10:
+            print "Your birthdate is " + str(bmon) + "/" + str(bdate) + "/0" + str(l2d) + "."
+        else:
+            print "Your birthdate is " + str(bmon) + "/" + str(bdate) + "/" + str(l2d) + "."
