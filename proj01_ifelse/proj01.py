@@ -49,20 +49,24 @@
         #print "You should be allowed to see PG-13 movies."
 
 
+number = int()
+letter = str()
 
 import time
 import random
+
+
 smalley = 18
 liek = 7
 talk = 1
 while talk == 1:
     name_3 = raw_input("Hi! What's your name? ")
     name_3 = name_3[0:1].upper() + name_3[1:].lower()
-    if len(name_3) > 10 and len(name_3) < 50:
+    if len(name_3) > 10 and len(name_3) < 30:
         time.sleep(1.2)
         print "That's a long name."
         time.sleep(1.4)
-    elif len(name_3) > 50:
+    elif len(name_3) > 30:
         time.sleep(2.5)
         print "I don't think that's even a name."
         time.sleep(1.8)
@@ -113,12 +117,12 @@ while talk == 1:
             time.sleep(0.5)
     else:
         time.sleep(0.45)
-        print "Nice."
+        print "Cool."
         time.sleep(0.45)
     while liek == 7:
         ui = raw_input("Do you want to play a game? ")
-        if ui == "no" or ui == "No":
-            raw_input("Why not? I haven't talked to anyone in a long time.")
+        if ui[0:].lower == "no":
+            raw_input("Why not? I haven't talked to anyone in a long time. ")
             print "Oh. Ok. Bye I guess."
             talk = talk - 1
             break
@@ -140,8 +144,8 @@ while talk == 1:
                 print "Rock, Paper, Scissors"
                 loop = 0
                 while game == 2:
-                    u_1 = raw_input("Player 1, enter either rock, paper, or scissors.")
-                    u_2 = raw_input("Player 2, enter either rock, paper, or scissors.")
+                    u_1 = raw_input("Player 1, enter either rock, paper, or scissors. ")
+                    u_2 = raw_input("Player 2, enter either rock, paper, or scissors. ")
                     if u_1 == "rock" or u_1 == "Rock":
                         if u_2 == "paper" or u_2 == "Paper":
                             print "Player 2 wins!"
@@ -175,8 +179,10 @@ while talk == 1:
                     else:
                         game = game - 1
                         liek = liek + 1
+
         elif ui2 == "2":
             print "Great! Let's get started."
+            time.sleep(.5)
             ui_4 = raw_input("Game 2 is Guess my number. Do you still want to play?")
             if ui_4 == "no" or ui_4 == "No":
                 print "Oh."
@@ -186,35 +192,42 @@ while talk == 1:
                 counter = 0
                 num = int(random.randint(1, 9))
                 while game == 1 and counter < 10:
-                    ug = int(raw_input("Enter a number, or type 0 to end. "))
-                    counter = counter + 1
-                    if ug == 0:
-                        game = game - 1
-                    elif ug > num:
-                        print "You guessed too high!"
-                    elif ug < num:
-                        print "You guessed too low!"
-                    elif ug == num:
-                        ui = raw_input(("Great, you won in ") + str(counter) + (" guess(es)! Do you want to play again? "))
-                        if ui == "No" or ui == "no":
-                            print "Oh. Okay then."
+                    if counter > 9:
+                        print "You managed to not guess the number even though you used over 9 guesses. You lose."
+                        goto(201)
+                    ug = int(raw_input("Enter a number from 1 to 9, or type 0 to end. "))
+                    if ug == number:
+                        ug = int(ug)
+                        counter = counter + 1
+                        if ug == 0:
                             game = game - 1
-                            liek = liek + 1
-                        else:
-                            game = 1
-                            num = int(random.randint(1, 9))
-                            counter = 0
+                        elif ug > num:
+                            print "You guessed too high!"
+                        elif ug < num:
+                            print "You guessed too low!"
+                        elif ug == num:
+                            ui = raw_input(("Great, you won in ") + str(counter) + (" guess(es)! Do you want to play again? "))
+                            if ui == "No" or ui == "no":
+                                print "Oh. Okay then."
+                                game = game - 1
+                                liek = liek + 1
+                            else:
+                                game = 1
+                                num = int(random.randint(1, 9))
+                                counter = 0
                     else:
                         counter = counter + 0
-                        print "A number, not a word or letters."
+                        print "A number, not words or letters."
+
         elif ui2 != "1" and ui2 != "2" and ui2 != "3":
             print "That's not an option. Let's play game 3."
+            time.sleep(.5)
             continue
-
-        elif ui2 == "3":
+        if ui2 == "3":
+            print "This game is called I Will Predict Your Birthday. I'm really good at it. Let's begin."
+            time.sleep(.6)
             while smalley == 18:
-                print "This game is called I Will Predict Your Birthday. I'm really good at it. Let's begin."
-                bmon = (raw_input("Tell me the number of your birth month."))
+                bmon = (raw_input("Tell me the number of your birth month. "))
                 if len(bmon) > 2 or int(bmon) > 12:
                     print "That's not a month."
                     break
@@ -238,7 +251,7 @@ while talk == 1:
                 time.sleep(1.1)
                 print "Divide " + str(bmon6) + " by 2. Now you have " + str(bmon7) + "."
                 time.sleep(1.1)
-                bdate = (raw_input("Tell me what day of the month you were born."))
+                bdate = raw_input("Tell me what day of the month you were born. ")
                 if len(bdate) > 2 or int(bdate) > 31:
                     print "That's not a day of any month."
                     break
@@ -256,7 +269,7 @@ while talk == 1:
                 time.sleep(1)
                 print "Now multiply " + str(bdamon3) + " by 20 and you get " + str(bdamon4) + "."
                 time.sleep(1)
-                l2d = (raw_input("Give me the last two numbers of your birth year."))
+                l2d = raw_input("Give me the last two numbers of your birth year. ")
                 if len(l2d) > 2:
                     print "I said the last two numbers of your birth year. You're making it hard for me."
                     break
